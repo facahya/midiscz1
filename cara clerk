@@ -1,0 +1,48 @@
+===cara backup table clerk====
+
+select * into backup_clerk from tx_clerk
+where date_clerk='3may2023'
+and user_id='0218014246'
+
+select *  from backup_clerk 
+where date_clerk='3may2023'
+and user_id='0218014246'
+
+==============================
+
+==cara insert/balikin kembali clerk===
+
+insert into tx_clerk
+select * from backup_clerk 
+where date_clerk='3may2023'
+and user_id='0218014246'
+
+select * from tx_clerk
+where date_clerk='3may2023'
+and user_id='0218014246'
+
+============================
+
+==syarat clerk ulang==
+
+select * from log_eod
+where date_tx='3may2023'
+and user_id='0218014246'
+
+update log_eod set s_clerk='F'
+where date_tx='3may2023'
+and user_id='0218014246'
+
+select * into backup_clerk from tx_clerk
+where date_clerk='3may2023'
+and user_id='0218014246'
+
+delete tx_clerk
+where date_clerk='3may2023'
+and user_id='0218014246'
+
+
+0218014246
+2872000
+
+0220022492
