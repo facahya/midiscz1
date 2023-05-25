@@ -1,0 +1,10 @@
+SELECT * from log_eod
+WHERE DATE_tx='04may23' and user_id=0217056255
+
+select * from OPENROWSET
+('SQLOLEDB','Server=10.234.234.4\SQLEXPRESS,1433;Database=dbpos;Uid=sa;Pwd=serdadu17midi;',
+'select * from tx_trans_temp')
+
+DELETE OPENROWSET
+('SQLOLEDB','Server=10.234.234.4\SQLEXPRESS,1433;Database=dbpos;Uid=sa;Pwd=serdadu17midi;',
+'select * from tx_trans_temp')
