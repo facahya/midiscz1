@@ -1,0 +1,9 @@
+====naikin PO BKL=====
+
+select * from TX_PO_DET
+where faktur='L-E23-0015'
+and plu in(1092022,1092032)
+
+update TX_PO_DET set QTY_PO='700',QTY_REC='700'
+where faktur='L-E23-0015'
+and plu in(1092022,1092032)
